@@ -1,16 +1,21 @@
 name: backend
-type: Backend Service
+type: Load Balanced Web Service
 
 image:
   build: backend/Dockerfile
+  port: 8080
+
+http:
+  path: '/api'
+  healthcheck: '/'
 
 cpu: 256
 memory: 512
 count: 1
 
 variables:
-  DYNAMODB_TABLE_NAME: MyOutcomesTable
-  AWS_REGION: us-west-2
+  DYNAMODB_TABLE_NAME: outcomes-management-app-dev-backend-Table
+  AWS_REGION: us-east-1
 
 addons:
   - dynamodb.yml
@@ -18,4 +23,4 @@ addons:
 environments:
   dev:
     variables:
-      DYNAMODB_TABLE_NAME: MyOutcomesTable
+      DYNAMODB_TABLE_NAME: outcomes-management-app-dev-backend-Table

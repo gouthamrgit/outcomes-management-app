@@ -15,4 +15,4 @@ count: 1
 environments:
   dev:
     variables:
-      REACT_APP_API_URL: http://backend.dev.outcomes-management-app.locals
+      REACT_APP_API_URL: http://outcom-Publi-UQnBiso8jfXw-211120991.us-east-1.elb.amazonaws.com
