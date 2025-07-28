@@ -1,8 +1,19 @@
+Parameters:
+  App:
+    Type: String
+    Description: The name of the application.
+  Env:
+    Type: String
+    Description: The name of the environment.
+  Name:
+    Type: String
+    Description: The name of the resource.
+
 Resources:
   MyDynamoDBTable:
     Type: AWS::DynamoDB::Table
     Properties:
-      TableName: MyOutcomesTable
+      TableName: !Sub '${App}-${Env}-${Name}-Table'
       AttributeDefinitions:
         - AttributeName: OutcomeID
           AttributeType: S

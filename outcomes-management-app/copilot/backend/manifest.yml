@@ -1,10 +1,21 @@
-# Copilot manifest for backend
 name: backend
-type: Load Balanced Web Service
+type: Backend Service
 
 image:
-  build: ./backend
+  build: backend/Dockerfile
 
-http:
-  path: '/'
-  targetContainer: 8080
+cpu: 256
+memory: 512
+count: 1
+
+variables:
+  DYNAMODB_TABLE_NAME: MyOutcomesTable
+  AWS_REGION: us-west-2
+
+addons:
+  - dynamodb.yml
+
+environments:
+  dev:
+    variables:
+      DYNAMODB_TABLE_NAME: MyOutcomesTable

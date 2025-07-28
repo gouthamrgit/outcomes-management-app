@@ -1,16 +1,14 @@
 import React from 'react';
-import './styles/App.css';
-import OutcomeList from './components/OutcomeList';
-import MeasurementList from './components/MeasurementList';
+import AddOutcome from './components/AddOutcome';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <h1>Outcomes and Measurements Management</h1>
-      <OutcomeList />
-      <MeasurementList />
+    <div>
+      <h1>Outcomes Management</h1>
+      <AddOutcome />
+      {/* Other components and logic */}
     </div>
   );
-}
+};
 
 export default App;
