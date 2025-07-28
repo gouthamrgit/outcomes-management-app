@@ -1,0 +1,10 @@
+# Copilot manifest for frontend
+name: frontend
+type: Load Balanced Web Service
+
+image:
+  build: ./frontend
+
+http:
+  path: '/'
+  targetContainer: 3000

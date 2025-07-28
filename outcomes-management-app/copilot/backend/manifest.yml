@@ -1,0 +1,10 @@
+# Copilot manifest for backend
+name: backend
+type: Load Balanced Web Service
+
+image:
+  build: ./backend
+
+http:
+  path: '/'
+  targetContainer: 8080

@@ -1,0 +1,14 @@
+Resources:
+  MyDynamoDBTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: MyOutcomesTable
+      AttributeDefinitions:
+        - AttributeName: OutcomeID
+          AttributeType: S
+      KeySchema:
+        - AttributeName: OutcomeID
+          KeyType: HASH
+      ProvisionedThroughput:
+        ReadCapacityUnits: 5
+        WriteCapacityUnits: 5
