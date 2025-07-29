@@ -1,13 +1,10 @@
 Parameters:
   App:
     Type: String
-    Description: The name of the application.
   Env:
     Type: String
-    Description: The name of the environment.
   Name:
     Type: String
-    Description: The name of the resource.
 
 Resources:
   MyDynamoDBTable:
@@ -23,3 +20,8 @@ Resources:
       ProvisionedThroughput:
         ReadCapacityUnits: 5
         WriteCapacityUnits: 5
+
+# This section tells Copilot to automatically grant permissions
+Outputs:
+  DynamoDBTableName:
+    Value: !Ref MyDynamoDBTable

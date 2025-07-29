@@ -1,5 +1,9 @@
 const AWS = require('aws-sdk');
-AWS.config.update({ region: 'us-west-2' });
+
+// Configure AWS SDK to use environment variables and ECS task role
+AWS.config.update({ 
+  region: process.env.AWS_REGION || 'us-east-1'
+});
 
 const dynamodb = new AWS.DynamoDB.DocumentClient();
 

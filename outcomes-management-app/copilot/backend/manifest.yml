@@ -17,6 +17,20 @@ variables:
   DYNAMODB_TABLE_NAME: outcomes-management-app-dev-backend-Table
   AWS_REGION: us-east-1
 
+task_role: |
+  Version: '2012-10-17'
+  Statement:
+    - Effect: Allow
+      Action:
+        - dynamodb:PutItem
+        - dynamodb:GetItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+        - dynamodb:Scan
+        - dynamodb:Query
+        - dynamodb:DescribeTable
+      Resource: "*"
+
 addons:
   - dynamodb.yml
 
